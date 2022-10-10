@@ -1,13 +1,16 @@
-DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))which
+DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
-brew-install: brew
+brew-install:
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
 
-cask-install: brew
-	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
+cask-install:
+	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
+
+code-install:
+	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
 
 setup:
 	cp $(DOTFILES_DIR)/config/git/ignore ~/.git
@@ -15,9 +18,12 @@ setup:
 	cp -r $(DOTFILES_DIR)/config/ssh ~/.ssh
 
 setup-ssh:
-	export JSON=$$(bw get item <ssh-id>)
-	echo $$JSON | jq -r .notes
-	echo $$JSON | jq -r .fields[0].value
+	bw list items --search ssh | jq '.[] | select(.name == "ssh").notes' > ~/.ssh/id_rsa
+	bw list items --search ssh | jq '.[] | select(.name == "ssh").fields | .[0].value' -r > ~/.ssh/id_rsa.pub
+
+setup-ssh-old:
+	bw list items --search ssh | jq '.[] | select(.name == "ssh.old").notes' > ~/.ssh/id_rsa
+	bw list items --search ssh | jq '.[] | select(.name == "ssh.old").fields | .[0].value' -r > ~/.ssh/id_rsa.pub
 
 keyboard-speed:
 	defaults write -g InitialKeyRepeat -int 10
