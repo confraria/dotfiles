@@ -1,0 +1,5 @@
+export EDITOR="code --wait"
+export CLICOLOR=1
+
+. ~/dotfiles/config/bash/aliases
+. ~/dotfiles/config/bash/colors

@@ -1,0 +1,30 @@
+[user]
+	name = Luis Confraria
+	email = lconfraria@gmail.com
+
+[alias]
+  co = checkout
+
+[color]
+  ui = true
+[core]
+  editor = code --wait
+	excludesfile = /Users/bug/.git/ignore
+[push]
+	default = current
+[pull]
+	rebase = true
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[diff]
+	tool = vscode
+[difftool]
+	prompt = false
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[mergetool]
+	prompt = false
+[merge]
+	tool = vscode
+[commit]
+	template = /Users/bug/.stCommitMsg
