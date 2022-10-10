@@ -6,6 +6,9 @@ brew:
 brew-install: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
 
+cask-install: brew
+	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
+
 setup:
 	cp $(DOTFILES_DIR)/config/git/ignore ~/.git
 	cp $(DOTFILES_DIR)/config/git/config ~/.gitconfig
