@@ -1,14 +1,10 @@
-tap "hashicorp/tap"
-
 brew "bash"
 brew "bitwarden-cli", args: ["ignore-dependencies"]
 brew "colima"
 brew "docker"
 brew "gh"
 brew "git"
-brew "hashicorp/tap/terraform"
 brew "jq"
-brew "pnpm", args: ["ignore-dependencies"]
 brew "the_silver_searcher"
 brew "volta"
 brew "wget"

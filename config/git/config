@@ -3,7 +3,31 @@
 	email = lconfraria@gmail.com
 
 [alias]
+  st = status -sb
+  lg = log --oneline --graph --decorate --all
+  show = show --name-status
   co = checkout
+  sw = switch
+  br = branch
+  bd = branch -d
+  cm = commit -m
+  amend = commit --amend --no-edit
+  pl = pull
+  ps = push
+  ci = commit
+  df = diff
+  ds = diff --staged
+  rb = rebase
+  rbi = rebase -i
+  mt = mergetool
+  last = log -1 HEAD
+  undo = reset --soft HEAD~1
+  unstage = reset HEAD --
+  tags = tag --list
+  wip = commit -m "WIP"
+  fixup = commit --fixup
+  squash = commit --squash
+  clean = clean -fd
 
 [color]
   ui = true

@@ -1,5 +1,8 @@
 export EDITOR="code --wait"
+export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
 
+. ~/dotfiles/config/bash/sensible
 . ~/dotfiles/config/bash/aliases
-. ~/dotfiles/config/bash/colors
+. ~/dotfiles/config/bash/powerline
+
