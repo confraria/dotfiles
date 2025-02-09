@@ -1,5 +1,6 @@
 DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
+
 brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
@@ -11,6 +12,11 @@ cask-install:
 
 code-install:
 	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
+
+setup-zsh:
+	cp $(DOTFILES_DIR)/config/zsh/zshenv ~/.zshenv
+	cp $(DOTFILES_DIR)/config/zsh/zshrc ~/.zshrc
+	cp $(DOTFILES_DIR)/config/zsh/zprofile ~/.zprofile
 
 setup-git:
 	cp $(DOTFILES_DIR)/config/git/ignore ~/.git

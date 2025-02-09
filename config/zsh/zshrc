@@ -1,0 +1,3 @@
+alias l="ls -lah"
+alias d="date +%Y-%m-%dT%H:%M:%S%z | pbcopy"
+eval "$(starship init zsh)"

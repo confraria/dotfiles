@@ -1,0 +1,15 @@
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+
+export DENO_INSTALL="/Users/bug/.deno"
+export VOLTA_HOME="$HOME/.volta"
+
+export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$PATH:$(go env GOPATH)/bin"
+
+export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH"
+export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH"

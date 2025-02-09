@@ -23,3 +23,5 @@ cask "zoomus"
 
 cask "font-fira-code"
 cask "font-hack"
+cask "font-hack-nerd-font"
+
